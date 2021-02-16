@@ -4,6 +4,19 @@
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/13b4b7d1-6c03-418b-8ac2-b5accbf3b67a/small.png)](https://insight.sensiolabs.com/projects/13b4b7d1-6c03-418b-8ac2-b5accbf3b67a)
 
+## Important note
+This is a clone of the original `yzalis/UAParser` library. Since that was abandoned & removed from GitHub you might run into problems running `composer install` for a project that uses this original library.  
+In order to fix these problems, all you need to do is to define the following "alternative" repository in the project's `composer.json` file:
+```
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/abandoned-packages/ua-parser.git"
+        }
+    ]
+```
+If you already have a `repositories` section, just extend it with the above entry.
+
 ## Basic Usage
 ```php
 <?php
