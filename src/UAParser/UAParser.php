@@ -2,9 +2,9 @@
 
 namespace UAParser;
 
-use UAParser\Result;
 use UAParser\Result\ResultFactory;
 use Symfony\Component\Yaml\Yaml;
+use UAParser\Result\ResultInterface;
 
 /**
  * @author Benjamin Laugueux <benjamin@yzalis.com>
