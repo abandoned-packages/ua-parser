@@ -67,7 +67,8 @@ class UAParser implements UAParserInterface
         }
 
         foreach ($this->regexes['browser_parsers'] as $expression) {
-            if (preg_match('/'.str_replace('/','\/',str_replace('\/','/', $expression['regex'])).'/i', $userAgent, $matches)) {
+            $pattern = $this->createRegexPattern($expression['regex']);
+            if (preg_match($pattern, $userAgent, $matches)) {
                 if (!isset($matches[1])) { $matches[1] = 'Other'; }
                 if (!isset($matches[2])) { $matches[2] = null; }
                 if (!isset($matches[3])) { $matches[3] = null; }
@@ -104,7 +105,8 @@ class UAParser implements UAParserInterface
         }
 
         foreach ($this->regexes['rendering_engine_parsers'] as $expression) {
-            if (preg_match('/'.str_replace('/','\/',str_replace('\/','/', $expression['regex'])).'/i', $userAgent, $matches)) {
+            $pattern = $this->createRegexPattern($expression['regex']);
+            if (preg_match($pattern, $userAgent, $matches)) {
 
                 if (!isset($matches[1])) { $matches[1] = 'Other'; }
                 if (!isset($matches[2])) { $matches[2] = null; }
@@ -140,7 +142,8 @@ class UAParser implements UAParserInterface
         }
 
         foreach ($this->regexes['operating_system_parsers'] as $expression) {
-            if (preg_match('/'.str_replace('/','\/',str_replace('\/','/', $expression['regex'])).'/i', $userAgent, $matches)) {
+            $pattern = $this->createRegexPattern($expression['regex']);
+            if (preg_match($pattern, $userAgent, $matches)) {
                 if (!isset($matches[1])) { $matches[1] = 'Other'; }
                 if (!isset($matches[2])) { $matches[2] = null; }
                 if (!isset($matches[3])) { $matches[3] = null; }
@@ -178,7 +181,8 @@ class UAParser implements UAParserInterface
         }
 
         foreach ($this->regexes['device_parsers'] as $expression) {
-            if (preg_match('/'.str_replace('/','\/',str_replace('\/','/', $expression['regex'])).'/i', $userAgent, $matches)) {
+            $pattern = $this->createRegexPattern($expression['regex']);
+            if (preg_match($pattern, $userAgent, $matches)) {
                 if (!isset($matches[1])) { $matches[1] = 'Other'; }
                 if (!isset($matches[2])) { $matches[2] = null; }
                 if (!isset($matches[3])) { $matches[3] = null; }
@@ -216,7 +220,8 @@ class UAParser implements UAParserInterface
         }
 
         foreach ($this->regexes['email_client_parsers'] as $expression) {
-            if (preg_match('/'.str_replace('/','\/',str_replace('\/','/', $expression['regex'])).'/i', $userAgent, $matches)) {
+            $pattern = $this->createRegexPattern($expression['regex']);
+            if (preg_match($pattern, $userAgent, $matches)) {
                 if (!isset($matches[1])) { $matches[1] = 'Other'; }
                 if (!isset($matches[2])) { $matches[2] = null; }
                 if (!isset($matches[3])) { $matches[3] = null; }
@@ -237,7 +242,8 @@ class UAParser implements UAParserInterface
 
         if ($result['family'] == 'Other' && null !== $referer) {
             foreach ($this->regexes['email_client_parsers'] as $emailClientRegexe) {
-                if (preg_match('/'.str_replace('/','\/',str_replace('\/','/', $emailClientRegexe['regex'])).'/i', $referer, $emailClientRefererMatches)) {
+                $pattern = $this->createRegexPattern($emailClientRegexe['regex']);
+                if (preg_match($pattern, $referer, $emailClientRefererMatches)) {
                     if (!isset($emailClientRefererMatches[1])) { $emailClientRefererMatches[1] = 'Other'; }
                     if (!isset($emailClientRefererMatches[2])) { $emailClientRefererMatches[2] = null; }
 
@@ -264,5 +270,10 @@ class UAParser implements UAParserInterface
         $resultFactory = new ResultFactory();
 
         return $resultFactory->createFromArray($data);
+    }
+
+    protected function createRegexPattern($pattern)
+    {
+        return '/' . str_replace('/', '\/', str_replace('\/', '/', $pattern)) . '/i';
     }
 }
