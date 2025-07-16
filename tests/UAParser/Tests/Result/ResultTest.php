@@ -14,8 +14,8 @@ class ResultTest  extends \PHPUnit_Framework_TestCase
         $factory = new ResultFactory();
         $result  = $factory->newInstance();
 
-        $this->assertInstanceOf('UAParser\Result\Result', $result);
-        $this->assertInstanceOf('UAParser\Result\ResultInterface', $result);
+        $this->assertInstanceOf(\UAParser\Result\Result::class, $result);
+        $this->assertInstanceOf(\UAParser\Result\ResultInterface::class, $result);
     }
 
     public function testCreateFromArray()
@@ -48,28 +48,28 @@ class ResultTest  extends \PHPUnit_Framework_TestCase
             )
         ));
 
-        $this->assertInstanceOf('UAParser\Result\Result', $result);
-        $this->assertInstanceOf('UAParser\Result\ResultInterface', $result);
+        $this->assertInstanceOf(\UAParser\Result\Result::class, $result);
+        $this->assertInstanceOf(\UAParser\Result\ResultInterface::class, $result);
 
-        $this->assertInstanceOf('UAParser\Result\BrowserResult', $result->getBrowser());
+        $this->assertInstanceOf(\UAParser\Result\BrowserResult::class, $result->getBrowser());
         $this->assertEquals('Safari', $result->getBrowser()->getFamily());
         $this->assertEquals(6, $result->getBrowser()->getMajor());
         $this->assertEquals(0, $result->getBrowser()->getMinor());
         $this->assertEquals(2, $result->getBrowser()->getPatch());
     
-        $this->assertInstanceOf('UAParser\Result\OperatingSystemResult', $result->getOperatingSystem());
+        $this->assertInstanceOf(\UAParser\Result\OperatingSystemResult::class, $result->getOperatingSystem());
         $this->assertEquals('Mac OS', $result->getOperatingSystem()->getFamily());
         $this->assertEquals(10, $result->getOperatingSystem()->getMajor());
         $this->assertEquals(8, $result->getOperatingSystem()->getMinor());
         $this->assertEquals(4, $result->getOperatingSystem()->getPatch());
     
-        $this->assertInstanceOf('UAParser\Result\EmailClientResult', $result->getEmailClient());
+        $this->assertInstanceOf(\UAParser\Result\EmailClientResult::class, $result->getEmailClient());
         $this->assertEquals('Thunderbird', $result->getEmailClient()->getFamily());
         $this->assertEquals(3, $result->getEmailClient()->getMajor());
         $this->assertEquals(1, $result->getEmailClient()->getMinor());
         $this->assertEquals(2, $result->getEmailClient()->getPatch());
     
-        $this->assertInstanceOf('UAParser\Result\DeviceResult', $result->getDevice());
+        $this->assertInstanceOf(\UAParser\Result\DeviceResult::class, $result->getDevice());
         $this->assertEquals('Apple', $result->getDevice()->getConstructor());
         $this->assertEquals('iPad', $result->getDevice()->getModel());
         $this->assertEquals('tablet', $result->getDevice()->getType());

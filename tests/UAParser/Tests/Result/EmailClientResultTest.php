@@ -20,8 +20,8 @@ class EmailClientResultTest extends \PHPUnit_Framework_TestCase
             'type'  => 'desktop',
         ));
 
-        $this->assertInstanceOf('UAParser\Result\EmailClientResult', $emailClientResult);
-        $this->assertInstanceOf('UAParser\Result\EmailClientResultInterface', $emailClientResult);
+        $this->assertInstanceOf(\UAParser\Result\EmailClientResult::class, $emailClientResult);
+        $this->assertInstanceOf(\UAParser\Result\EmailClientResultInterface::class, $emailClientResult);
 
         $this->assertEquals('Thunderbird', $emailClientResult->getFamily());
         $this->assertInternalType('string', $emailClientResult->getFamily());

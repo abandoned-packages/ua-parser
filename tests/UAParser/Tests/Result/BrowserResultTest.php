@@ -19,8 +19,8 @@ class BrowserResultTest extends \PHPUnit_Framework_TestCase
             'patch'  => '2',
         ));
 
-        $this->assertInstanceOf('UAParser\Result\BrowserResult', $browserResult);
-        $this->assertInstanceOf('UAParser\Result\BrowserResultInterface', $browserResult);
+        $this->assertInstanceOf(\UAParser\Result\BrowserResult::class, $browserResult);
+        $this->assertInstanceOf(\UAParser\Result\BrowserResultInterface::class, $browserResult);
 
         $this->assertEquals('Safari', $browserResult->getFamily());
         $this->assertInternalType('string', $browserResult->getFamily());

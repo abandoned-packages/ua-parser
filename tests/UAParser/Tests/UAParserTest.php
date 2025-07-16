@@ -45,17 +45,17 @@ class UAParserTest extends \PHPUnit_Framework_TestCase
         $uaParser = new UAParser();
         $result = $uaParser->parse('');
 
-        $this->assertInstanceOf('UAParser\UAParser', $uaParser);
-        $this->assertInstanceOf('UAParser\UAParserInterface', $uaParser);
-        $this->assertInstanceOf('UAParser\Result\DeviceResult', $result->getDevice());
-        $this->assertInstanceOf('UAParser\Result\DeviceResultInterface', $result->getDevice());
-        $this->assertInstanceOf('UAParser\Result\OperatingSystemResult', $result->getOperatingSystem());
-        $this->assertInstanceOf('UAParser\Result\OperatingSystemResultInterface', $result->getOperatingSystem());
-        $this->assertInstanceOf('UAParser\Result\BrowserResult', $result->getBrowser());
-        $this->assertInstanceOf('UAParser\Result\BrowserResultInterface', $result->getBrowser());
-        $this->assertInstanceOf('UAParser\Result\EmailClientResult', $result->getEmailClient());
-        $this->assertInstanceOf('UAParser\Result\EmailClientResultInterface', $result->getEmailClient());
-        $this->assertInstanceOf('UAParser\Result\RenderingEngineResult', $result->getRenderingEngine());
-        $this->assertInstanceOf('UAParser\Result\RenderingEngineResultInterface', $result->getRenderingEngine());
+        $this->assertInstanceOf(\UAParser\UAParser::class, $uaParser);
+        $this->assertInstanceOf(\UAParser\UAParserInterface::class, $uaParser);
+        $this->assertInstanceOf(\UAParser\Result\DeviceResult::class, $result->getDevice());
+        $this->assertInstanceOf(\UAParser\Result\DeviceResultInterface::class, $result->getDevice());
+        $this->assertInstanceOf(\UAParser\Result\OperatingSystemResult::class, $result->getOperatingSystem());
+        $this->assertInstanceOf(\UAParser\Result\OperatingSystemResultInterface::class, $result->getOperatingSystem());
+        $this->assertInstanceOf(\UAParser\Result\BrowserResult::class, $result->getBrowser());
+        $this->assertInstanceOf(\UAParser\Result\BrowserResultInterface::class, $result->getBrowser());
+        $this->assertInstanceOf(\UAParser\Result\EmailClientResult::class, $result->getEmailClient());
+        $this->assertInstanceOf(\UAParser\Result\EmailClientResultInterface::class, $result->getEmailClient());
+        $this->assertInstanceOf(\UAParser\Result\RenderingEngineResult::class, $result->getRenderingEngine());
+        $this->assertInstanceOf(\UAParser\Result\RenderingEngineResultInterface::class, $result->getRenderingEngine());
     }
 }

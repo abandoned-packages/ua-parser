@@ -18,8 +18,8 @@ class DeviceResultTest extends \PHPUnit_Framework_TestCase
             'type'       => 'mobile',
         ));
 
-        $this->assertInstanceOf('UAParser\Result\DeviceResult', $deviceResult);
-        $this->assertInstanceOf('UAParser\Result\DeviceResultInterface', $deviceResult);
+        $this->assertInstanceOf(\UAParser\Result\DeviceResult::class, $deviceResult);
+        $this->assertInstanceOf(\UAParser\Result\DeviceResultInterface::class, $deviceResult);
 
         $this->assertEquals('Apple', $deviceResult->getConstructor());
         $this->assertInternalType('string', $deviceResult->getConstructor());

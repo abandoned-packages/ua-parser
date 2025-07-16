@@ -19,8 +19,8 @@ class OperatingSystemResultTest extends \PHPUnit_Framework_TestCase
             'patch'  => '3',
         ));
 
-        $this->assertInstanceOf('UAParser\Result\OperatingSystemResult', $operatingSystemResult);
-        $this->assertInstanceOf('UAParser\Result\OperatingSystemResultInterface', $operatingSystemResult);
+        $this->assertInstanceOf(\UAParser\Result\OperatingSystemResult::class, $operatingSystemResult);
+        $this->assertInstanceOf(\UAParser\Result\OperatingSystemResultInterface::class, $operatingSystemResult);
 
         $this->assertEquals('Mac OSX', $operatingSystemResult->getFamily());
         $this->assertInternalType('string', $operatingSystemResult->getFamily());

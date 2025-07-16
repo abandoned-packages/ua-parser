@@ -17,8 +17,8 @@ class RenderingEngineResultTest extends \PHPUnit_Framework_TestCase
             'version'  => '4.0',
         ));
 
-        $this->assertInstanceOf('UAParser\Result\RenderingEngineResult', $result);
-        $this->assertInstanceOf('UAParser\Result\RenderingEngineResultInterface', $result);
+        $this->assertInstanceOf(\UAParser\Result\RenderingEngineResult::class, $result);
+        $this->assertInstanceOf(\UAParser\Result\RenderingEngineResultInterface::class, $result);
 
         $this->assertEquals('Trident', $result->getFamily());
         $this->assertInternalType('string', $result->getFamily());
