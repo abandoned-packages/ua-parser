@@ -7,7 +7,7 @@ use UAParser\Result\EmailClientResult;
 /**
  * @author Benjamin Laugueux <benjamin@yzalis.com>
  */
-class EmailClientResultTest extends \PHPUnit_Framework_TestCase
+class EmailClientResultTest extends \PHPUnit\Framework\TestCase
 {
     public function testFromArray()
     {

@@ -7,7 +7,7 @@ use UAParser\Result\BrowserResult;
 /**
  * @author Benjamin Laugueux <benjamin@yzalis.com>
  */
-class BrowserResultTest extends \PHPUnit_Framework_TestCase
+class BrowserResultTest extends \PHPUnit\Framework\TestCase
 {
     public function testFromArray()
     {

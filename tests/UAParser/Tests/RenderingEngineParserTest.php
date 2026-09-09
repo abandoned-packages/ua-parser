@@ -8,7 +8,7 @@ use Symfony\Component\Yaml\Yaml;
 /**
  * @author Benjamin Laugueux <benjamin@yzalis.com>
  */
-class RenderingEngineParserTest extends \PHPUnit_Framework_TestCase
+class RenderingEngineParserTest extends \PHPUnit\Framework\TestCase
 {
     protected $uaParser;
 

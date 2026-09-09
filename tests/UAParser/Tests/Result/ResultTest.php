@@ -7,7 +7,7 @@ use UAParser\Result\ResultFactory;
 /**
  * @author Benjamin Laugueux <benjamin@yzalis.com>
  */
-class ResultTest  extends \PHPUnit_Framework_TestCase
+class ResultTest  extends \PHPUnit\Framework\TestCase
 {
     public function testNewInstance()
     {

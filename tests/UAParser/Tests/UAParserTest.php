@@ -7,7 +7,7 @@ use UAParser\UAParser;
 /**
  * @author Benjamin Laugueux <benjamin@yzalis.com>
  */
-class UAParserTest extends \PHPUnit_Framework_TestCase
+class UAParserTest extends \PHPUnit\Framework\TestCase
 {
     public function testConstructorLoadsDefaultRegexesPath()
     {

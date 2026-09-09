@@ -7,7 +7,7 @@ use UAParser\Result\OperatingSystemResult;
 /**
  * @author Benjamin Laugueux <benjamin@yzalis.com>
  */
-class OperatingSystemResultTest extends \PHPUnit_Framework_TestCase
+class OperatingSystemResultTest extends \PHPUnit\Framework\TestCase
 {
     public function testFromArray()
     {

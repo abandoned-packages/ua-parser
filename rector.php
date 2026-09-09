@@ -4,6 +4,7 @@ use Rector\Config\RectorConfig;
 use Rector\Php54\Rector\Array_\LongArrayToShortArrayRector;
 use Rector\Set\ValueObject\LevelSetList;
 use Rector\ValueObject\PhpVersion;
+use Rector\PHPUnit\Set\PHPUnitSetList;
 
 return RectorConfig::configure()
     ->withPaths([
@@ -18,5 +19,7 @@ return RectorConfig::configure()
     ])
     ->withSets([
         LevelSetList::UP_TO_PHP_74,
+        PHPUnitSetList::PHPUNIT_50,
+        PHPUnitSetList::PHPUNIT_60,
     ])
     ->withPhpVersion(PhpVersion::PHP_56);

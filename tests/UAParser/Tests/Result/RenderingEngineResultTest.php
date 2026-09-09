@@ -7,7 +7,7 @@ use UAParser\Result\RenderingEngineResult;
 /**
  * @author Benjamin Laugueux <benjamin@yzalis.com>
  */
-class RenderingEngineResultTest extends \PHPUnit_Framework_TestCase
+class RenderingEngineResultTest extends \PHPUnit\Framework\TestCase
 {
     public function testFromArray()
     {

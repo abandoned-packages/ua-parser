@@ -7,7 +7,7 @@ use UAParser\Result\DeviceResult;
 /**
  * @author Benjamin Laugueux <benjamin@yzalis.com>
  */
-class DeviceResultTest extends \PHPUnit_Framework_TestCase
+class DeviceResultTest extends \PHPUnit\Framework\TestCase
 {
     public function testFromArray()
     {

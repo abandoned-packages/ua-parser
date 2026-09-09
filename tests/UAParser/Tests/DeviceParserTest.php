@@ -8,7 +8,7 @@ use Symfony\Component\Yaml\Yaml;
 /**
  * @author Benjamin Laugueux <benjamin@yzalis.com>
  */
-class DeviceParserTest extends \PHPUnit_Framework_TestCase
+class DeviceParserTest extends \PHPUnit\Framework\TestCase
 {
     protected $uaParser;
 
