@@ -21,5 +21,6 @@ return RectorConfig::configure()
         LevelSetList::UP_TO_PHP_74,
         PHPUnitSetList::PHPUNIT_50,
         PHPUnitSetList::PHPUNIT_60,
+        PHPUnitSetList::PHPUNIT_70,
     ])
     ->withPhpVersion(PhpVersion::PHP_56);
