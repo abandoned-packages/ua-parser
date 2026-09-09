@@ -12,7 +12,7 @@ class RenderingEngineParserTest extends \PHPUnit\Framework\TestCase
 {
     protected $uaParser;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->uaParser = new UAParser();
     }

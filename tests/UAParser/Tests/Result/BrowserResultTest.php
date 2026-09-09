@@ -23,16 +23,16 @@ class BrowserResultTest extends \PHPUnit\Framework\TestCase
         $this->assertInstanceOf(\UAParser\Result\BrowserResultInterface::class, $browserResult);
 
         $this->assertEquals('Safari', $browserResult->getFamily());
-        $this->assertInternalType('string', $browserResult->getFamily());
+        $this->assertIsString($browserResult->getFamily());
 
         $this->assertEquals(6, $browserResult->getMajor());
-        $this->assertInternalType('integer', $browserResult->getMajor());
+        $this->assertIsInt($browserResult->getMajor());
 
         $this->assertEquals(0, $browserResult->getMinor());
-        $this->assertInternalType('integer', $browserResult->getMinor());
+        $this->assertIsInt($browserResult->getMinor());
 
         $this->assertEquals(2, $browserResult->getPatch());
-        $this->assertInternalType('integer', $browserResult->getPatch());
+        $this->assertIsInt($browserResult->getPatch());
 
         $this->assertEquals('Safari 6.0.2', $browserResult->__toString());
 

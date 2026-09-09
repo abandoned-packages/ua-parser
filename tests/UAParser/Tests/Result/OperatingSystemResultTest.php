@@ -23,16 +23,16 @@ class OperatingSystemResultTest extends \PHPUnit\Framework\TestCase
         $this->assertInstanceOf(\UAParser\Result\OperatingSystemResultInterface::class, $operatingSystemResult);
 
         $this->assertEquals('Mac OSX', $operatingSystemResult->getFamily());
-        $this->assertInternalType('string', $operatingSystemResult->getFamily());
+        $this->assertIsString($operatingSystemResult->getFamily());
 
         $this->assertEquals(10, $operatingSystemResult->getMajor());
-        $this->assertInternalType('string', $operatingSystemResult->getMajor());
+        $this->assertIsString($operatingSystemResult->getMajor());
 
         $this->assertEquals(8, $operatingSystemResult->getMinor());
-        $this->assertInternalType('string', $operatingSystemResult->getMinor());
+        $this->assertIsString($operatingSystemResult->getMinor());
 
         $this->assertEquals(3, $operatingSystemResult->getPatch());
-        $this->assertInternalType('string', $operatingSystemResult->getPatch());
+        $this->assertIsString($operatingSystemResult->getPatch());
 
         $this->assertEquals('Mac OSX 10.8.3', $operatingSystemResult->__toString());
     }

@@ -75,9 +75,9 @@ class UAParser implements UAParserInterface
                 if (!isset($matches[4])) { $matches[4] = null; }
 
                 $result['family'] = isset($expression['family_replacement']) ? str_replace('$1', $matches[1], $expression['family_replacement']) : $matches[1];
-                $result['major']  = isset($expression['major_replacement']) ? $expression['major_replacement'] : $matches[2];
-                $result['minor']  = isset($expression['minor_replacement']) ? $expression['minor_replacement'] : $matches[3];
-                $result['patch']  = isset($expression['patch_replacement']) ? $expression['patch_replacement'] : $matches[4];
+                $result['major']  = $expression['major_replacement'] ?? $matches[2];
+                $result['minor']  = $expression['minor_replacement'] ?? $matches[3];
+                $result['patch']  = $expression['patch_replacement'] ?? $matches[4];
 
                 return $result;
             }
@@ -150,9 +150,9 @@ class UAParser implements UAParserInterface
                 if (!isset($matches[4])) { $matches[4] = null; }
 
                 $result['family'] = isset($expression['family_replacement']) ? str_replace('$1', $matches[1], $expression['family_replacement']) : $matches[1];
-                $result['major']  = isset($expression['major_replacement']) ? $expression['major_replacement'] : $matches[2];
-                $result['minor']  = isset($expression['minor_replacement']) ? $expression['minor_replacement'] : $matches[3];
-                $result['patch']  = isset($expression['patch_replacement']) ? $expression['patch_replacement'] : $matches[4];
+                $result['major']  = $expression['major_replacement'] ?? $matches[2];
+                $result['minor']  = $expression['minor_replacement'] ?? $matches[3];
+                $result['patch']  = $expression['patch_replacement'] ?? $matches[4];
 
                 return $result;
             }
@@ -189,7 +189,7 @@ class UAParser implements UAParserInterface
 
                 $result['constructor'] = isset($expression['constructor_replacement']) ? str_replace(array('$1', '$2'), array($matches[1], $matches[2]), $expression['constructor_replacement']) : $matches[1];
                 $result['model']       = isset($expression['model_replacement']) ? str_replace(array('$1', '$2'), array($matches[1], $matches[2]), $expression['model_replacement']) : $matches[2];
-                $result['type']        = isset($expression['type_replacement']) ? $expression['type_replacement'] : $matches[3];
+                $result['type']        = $expression['type_replacement'] ?? $matches[3];
 
                 return $result;
             }
@@ -229,10 +229,10 @@ class UAParser implements UAParserInterface
                 if (!isset($matches[5])) { $matches[5] = null; }
 
                 $result['family'] = isset($expression['family_replacement']) ? str_replace('$1', $matches[1], $expression['family_replacement']) : $matches[1];
-                $result['major']  = isset($expression['major_replacement']) ? $expression['major_replacement'] : $matches[2];
-                $result['minor']  = isset($expression['minor_replacement']) ? $expression['minor_replacement'] : $matches[3];
-                $result['patch']  = isset($expression['patch_replacement']) ? $expression['patch_replacement'] : $matches[4];
-                $result['type']   = isset($expression['type_replacement']) ? $expression['type_replacement'] : $matches[5];
+                $result['major']  = $expression['major_replacement'] ?? $matches[2];
+                $result['minor']  = $expression['minor_replacement'] ?? $matches[3];
+                $result['patch']  = $expression['patch_replacement'] ?? $matches[4];
+                $result['type']   = $expression['type_replacement'] ?? $matches[5];
 
                 goto referer;
             }
@@ -248,7 +248,7 @@ class UAParser implements UAParserInterface
                     if (!isset($emailClientRefererMatches[2])) { $emailClientRefererMatches[2] = null; }
 
                     $result['family'] = isset($emailClientRegexe['family_replacement']) ? str_replace('$1', $emailClientRefererMatches[1], $emailClientRegexe['family_replacement']) : $emailClientRefererMatches[1];
-                    $result['type']   = isset($emailClientRegexe['type_replacement']) ? $emailClientRegexe['type_replacement'] : $emailClientRefererMatches[2];
+                    $result['type']   = $emailClientRegexe['type_replacement'] ?? $emailClientRefererMatches[2];
 
                     return $result;
                 }

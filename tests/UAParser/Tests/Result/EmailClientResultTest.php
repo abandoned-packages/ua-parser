@@ -24,21 +24,21 @@ class EmailClientResultTest extends \PHPUnit\Framework\TestCase
         $this->assertInstanceOf(\UAParser\Result\EmailClientResultInterface::class, $emailClientResult);
 
         $this->assertEquals('Thunderbird', $emailClientResult->getFamily());
-        $this->assertInternalType('string', $emailClientResult->getFamily());
+        $this->assertIsString($emailClientResult->getFamily());
 
         $this->assertEquals('3', $emailClientResult->getMajor());
-        $this->assertInternalType('string', $emailClientResult->getMajor());
+        $this->assertIsString($emailClientResult->getMajor());
 
         $this->assertEquals('1', $emailClientResult->getMinor());
-        $this->assertInternalType('string', $emailClientResult->getMinor());
+        $this->assertIsString($emailClientResult->getMinor());
 
         $this->assertEquals('2', $emailClientResult->getPatch());
-        $this->assertInternalType('string', $emailClientResult->getPatch());
+        $this->assertIsString($emailClientResult->getPatch());
 
         $this->assertEquals('desktop', $emailClientResult->getType());
-        $this->assertInternalType('string', $emailClientResult->getType());
+        $this->assertIsString($emailClientResult->getType());
 
         $this->assertEquals('Thunderbird 3.1.2', $emailClientResult->__toString());
-        $this->assertInternalType('string', $emailClientResult->__toString());
+        $this->assertIsString($emailClientResult->__toString());
     }
 }

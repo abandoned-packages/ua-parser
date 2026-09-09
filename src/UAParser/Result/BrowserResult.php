@@ -67,7 +67,7 @@ class BrowserResult implements BrowserResultInterface
     public function getVersionString()
     {
         if (null === $this->versionString) {
-            $versionString = null !== $this->getMajor() ? $this->getMajor() : '';
+            $versionString = $this->getMajor() ?? '';
             $versionString = null !== $this->getMinor() ? $versionString.'.'.$this->getMinor() : $versionString;
             $versionString = null !== $this->getPatch() ? $versionString.'.'.$this->getPatch() : $versionString;
 

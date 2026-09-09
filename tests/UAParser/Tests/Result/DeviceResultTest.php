@@ -22,16 +22,16 @@ class DeviceResultTest extends \PHPUnit\Framework\TestCase
         $this->assertInstanceOf(\UAParser\Result\DeviceResultInterface::class, $deviceResult);
 
         $this->assertEquals('Apple', $deviceResult->getConstructor());
-        $this->assertInternalType('string', $deviceResult->getConstructor());
+        $this->assertIsString($deviceResult->getConstructor());
 
         $this->assertEquals('iPhone', $deviceResult->getModel());
-        $this->assertInternalType('string', $deviceResult->getModel());
+        $this->assertIsString($deviceResult->getModel());
 
         $this->assertEquals('mobile', $deviceResult->getType());
-        $this->assertInternalType('string', $deviceResult->getType());
+        $this->assertIsString($deviceResult->getType());
 
         $this->assertEquals('Apple iPhone', $deviceResult->__toString());
-        $this->assertInternalType('string', $deviceResult->__toString());
+        $this->assertIsString($deviceResult->__toString());
 
         $this->assertTrue($deviceResult->isMobile());
         $this->assertTrue($deviceResult->is('mobile'));
