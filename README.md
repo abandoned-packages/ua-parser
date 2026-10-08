@@ -1,11 +1,9 @@
-# UAParser [![Build Status](https://secure.travis-ci.org/yzalis/UAParser.png)](http://travis-ci.org/yzalis/UAParser)
+# UAParser
 
 **UAParser** is a library which helps you to parse user agents and detect browser, operating system, device and more.
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/13b4b7d1-6c03-418b-8ac2-b5accbf3b67a/small.png)](https://insight.sensiolabs.com/projects/13b4b7d1-6c03-418b-8ac2-b5accbf3b67a)
-
 ## Important note
-This is a clone of the original `yzalis/UAParser` library. Since that was abandoned & removed from GitHub you might run into problems running `composer install` for a project that uses this original library.  
+This is a clone of the original `yzalis/UAParser` library. Since that was abandoned & removed from GitHub, you might run into problems running `composer install` for a project that uses this original library.  
 In order to fix these problems, all you need to do is to define the following "alternative" repository in the project's `composer.json` file:
 ```
     "repositories": [
@@ -96,8 +94,8 @@ You're done.
 
 ## Credits
 
-* Benjamin Laugueux <benjamin@yzalis.com>
-* [All contributors](https://github.com/yzalis/UAParser/contributors)
+* OG: Benjamin Laugueux <benjamin@yzalis.com>
+* [All contributors](https://github.com/abandoned-packages/UAParser/contributors)
 
 Thanks for providing a huge amount of data to run tests:
 * [http://user-agent-string.info](http://user-agent-string.info)
