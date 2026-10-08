@@ -3,6 +3,7 @@
 namespace UAParser\Result;
 
 use Doctrine\Common\Inflector\Inflector;
+use Doctrine\Inflector\InflectorFactory;
 
 /**
  * @author Benjamin Laugueux <benjamin@yzalis.com>
@@ -49,11 +50,13 @@ class Result implements ResultInterface
      */
     public function fromArray(array $data = array())
     {
+        $inflector = InflectorFactory::create()->build();
+
         foreach (get_class_vars(get_class($this)) as $name => $value) {
-            if (isset($data[Inflector::tableize($name)])) {
-                $class = "\\UAParser\\Result\\".Inflector::classify($name).'Result';
+            if (isset($data[$inflector->tableize($name)])) {
+                $class = "\\UAParser\\Result\\" . $inflector->classify($name) . 'Result';
                 $this->{$name} = new $class();
-                $this->{$name}->fromArray($data[Inflector::tableize($name)]);
+                $this->{$name}->fromArray($data[$inflector->tableize($name)]);
             }
         }
     }
