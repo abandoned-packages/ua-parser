@@ -95,7 +95,6 @@ You're done.
 ## Credits
 
 * OG: Benjamin Laugueux <benjamin@yzalis.com>
-* [All contributors](https://github.com/abandoned-packages/UAParser/contributors)
 
 Thanks for providing a huge amount of data to run tests:
 * [http://user-agent-string.info](http://user-agent-string.info)
